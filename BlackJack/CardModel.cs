@@ -2,8 +2,8 @@
 {
     public class CardModel
     {
-        public string cardSuit { get; set; }
-        public int cardPointValue { get; set; }
-        public string cardNumber { get; set; }
+        public string Suit { get; set; }
+        public int PointValue { get; set; }
+        public string Number { get; set; }
     }
 }
