@@ -18,7 +18,7 @@ namespace BlackJack
 
                     //Creats a single card that properties can be applied to.
                     CardModel card = new CardModel();
-
+                    //Assins each card in the loop a suit.
                     switch (suit)
                     {
                         case 0:
@@ -35,8 +35,7 @@ namespace BlackJack
                             break;
                     }
                     
-                    //If statements that assign what the face value if each card is nby using the position in the loop.
-                    //Ace can hold both a value of 1 and 11 ao it will be assigned later in the point addition phase.
+                    //Assigns what the cars number is or face.
                     switch (value)
                     {
                         case 14:
@@ -55,6 +54,8 @@ namespace BlackJack
                             card.Number = value.ToString();
                             break;
                     }
+                    //Assign what the face value if each card is by using the position in the loop.
+                    //Ace will be assigned a value of eleven but can be changed later in program.
                     if (value == 14)
                     {
                         card.PointValue = 11;
@@ -77,9 +78,6 @@ namespace BlackJack
             }
             //Verifies that the entire deck of 52 was created.  Used for Debugging.
             //Console.WriteLine("The card deck has {0} cards,\n", DeckCreation.Count);
-
-
-
         }   
     }
 }
