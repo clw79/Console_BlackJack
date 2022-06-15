@@ -16,6 +16,8 @@ namespace BlackJack
             int drawCard = random.Next(Deck.Count);
             //Adds the card in the selected position to the DealerHand.
             Hand.Add(Deck[drawCard]);
+            
+
             //Removes the selected card from the deck.
             Deck.Remove(Deck[drawCard]);
             //Resizes the capacity of the list.

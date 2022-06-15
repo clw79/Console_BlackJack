@@ -130,6 +130,9 @@ namespace BlackJack
                 {
                     //Calls a method that removes a card from the deck and inserts it in the dealer's hand.
                     deal.DealCard(DeckofCards, DealerHand);
+                    //Updating the dealers total points
+                    dealerHandPoints = pointCalculations.PointTotal(DealerHand);
+
                     //Checking to see if the busted hand has an Ace with the value of eleven.  If so it changes it to
                     // a value of one and recalculates the dealer points.
                     if (playerHandPoints > 21)
