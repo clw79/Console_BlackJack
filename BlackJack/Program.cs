@@ -101,9 +101,19 @@ namespace BlackJack
                     {
                         Console.WriteLine("   Points = {0}", playerHandPoints);
                         Console.WriteLine();
-                        Console.WriteLine("   Press y and enter to receive next card, any other key to pass.");
-                        //Assigns user answer to variable.
-                        newCard = Console.ReadLine();
+                        Console.WriteLine("   Press y to receive next card, any other key to pass.");
+                        
+                        //User input for a new card
+                        getCard = Console.ReadKey(true).KeyChar;
+                        //Checks if the user typed a y or Y
+                        if ((getCard == 'Y') || (getCard == 'y'))
+                        {
+                            newCard = "y";
+                        }
+                        else
+                        {
+                            newCard = "n";
+                        }
                     }
                 }
                 Console.WriteLine();
@@ -212,9 +222,18 @@ namespace BlackJack
 
                 Console.WriteLine();
                 //Asks user to play again.
-                Console.WriteLine("   Press n and enter to exit, any other key to play again.");
-                //Assigns user input to variable.
-                playGame = Console.ReadLine();
+                Console.WriteLine("   Press Q to quit, any other key to play again.");
+                //User input for a new card
+                char quit = Console.ReadKey(true).KeyChar;
+                //Checks if the user typed a q or Q
+                if ((quit == 'Q') || (quit == 'q'))
+                {
+                    playGame = "n";
+                }
+                else
+                {
+                    playGame = "y";
+                }
 
             }
 
