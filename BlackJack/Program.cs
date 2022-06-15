@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 
 namespace BlackJack
@@ -57,10 +56,16 @@ namespace BlackJack
                 Console.WriteLine("{0} Total Points\n", playerHandPoints);
 
                 //Give the player the option to receive another card or to stand.
-                Console.WriteLine("   Press y and enter to receive next card, any other key to pass.");
-                //Applies user input to a variable.
-                string newCard = Console.ReadLine();
-
+                Console.WriteLine("   Press y to receive next card, any other key to pass.");
+                //Varaible holding status of card being requested.
+                string newCard = "n";
+                //User input for a new card
+                char getCard = Console.ReadKey(true).KeyChar;
+                //Checks if the user typed a y or Y
+                if ((getCard == 'Y') || (getCard == 'y'))
+                {
+                    newCard = "y";
+                }
                 //Checks to see if user requested card and that they have not yet busted.
                 while (newCard == "y" && playerHandPoints < 22)
                 {
@@ -68,6 +73,7 @@ namespace BlackJack
                     Console.WriteLine("--Player Hand--");
                     //Calls a method that removes a card from the deck and inserts it in the players hand.
                     deal.DealCard(DeckofCards, PlayerHand);
+                    playerHandPoints = pointCalculations.PointTotal(PlayerHand);
                     //Checking to see if the busted hand has an Ace with the value of eleven.  If so it changes it to
                     // a value of one and recalculates the player points.
                     if (playerHandPoints > 21)
@@ -203,7 +209,7 @@ namespace BlackJack
                 {
                     Console.WriteLine("   You Lost");
                 }
-                
+
                 Console.WriteLine();
                 //Asks user to play again.
                 Console.WriteLine("   Press n and enter to exit, any other key to play again.");
@@ -214,6 +220,6 @@ namespace BlackJack
 
         }
 
-        
+
     }
 }
