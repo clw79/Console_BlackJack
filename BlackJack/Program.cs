@@ -54,6 +54,7 @@ namespace BlackJack
                             break;
                         }
                     }
+                    //Recaliculate total points
                     playerHandPoints = pointCalculations.PointTotal(PlayerHand);
                 }
                 dealerHandPoints = pointCalculations.PointTotal(DealerHand);
@@ -69,6 +70,7 @@ namespace BlackJack
                             break;
                         }
                     }
+                    //Recaliculate total points
                     playerHandPoints = pointCalculations.PointTotal(PlayerHand);
                 }
 
@@ -114,6 +116,7 @@ namespace BlackJack
                                 break;
                             }
                         }
+                        //Recaliculate total points
                         playerHandPoints = pointCalculations.PointTotal(PlayerHand);
                     }
                     //Calls method that runs a loop to display each card's Number, Suit and PointValue from the list.
@@ -189,6 +192,7 @@ namespace BlackJack
                                 break;
                             }
                         }
+                        //Recaliculate total points
                         playerHandPoints = pointCalculations.PointTotal(PlayerHand);
                     }
                     //Displays header.
@@ -220,7 +224,7 @@ namespace BlackJack
                     Console.ReadKey();
                 }
                 //Displays final points for the dealer and player.
-                Console.WriteLine("Dealer has {0} points,  Player has {1} points.\n", dealerHandPoints, playerHandPoints);
+                Console.WriteLine("   Dealer has {0} points,  Player has {1} points.\n", dealerHandPoints, playerHandPoints);
                 //Cheshing different conditions to see who one.
                 //Player busted, Dealer wins.
                 if (playerHandPoints > 21)
