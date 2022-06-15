@@ -42,7 +42,35 @@ namespace BlackJack
                 }
                 //Calculates the total points of the player and dealer hands.
                 playerHandPoints = pointCalculations.PointTotal(PlayerHand);
+                //Checking to see if the busted hand has an Ace with the value of eleven.  If so it changes it to
+                // a value of one and recalculates the player points.
+                if (playerHandPoints > 21)
+                {
+                    foreach (CardModel card in PlayerHand)
+                    {
+                        if (card.PointValue == 11)
+                        {
+                            card.PointValue = 1;
+                            break;
+                        }
+                    }
+                    playerHandPoints = pointCalculations.PointTotal(PlayerHand);
+                }
                 dealerHandPoints = pointCalculations.PointTotal(DealerHand);
+                //Checking to see if the busted hand has an Ace with the value of eleven.  If so it changes it to
+                // a value of one and recalculates the player points.
+                if (playerHandPoints > 21)
+                {
+                    foreach (CardModel card in PlayerHand)
+                    {
+                        if (card.PointValue == 11)
+                        {
+                            card.PointValue = 1;
+                            break;
+                        }
+                    }
+                    playerHandPoints = pointCalculations.PointTotal(PlayerHand);
+                }
 
                 //Displays the header and the card showing for the dealer.  Hidden card has been delt but is not
                 //shown till after the players turn.
